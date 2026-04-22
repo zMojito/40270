@@ -1,0 +1,14 @@
+<?xml version=1.0 encoding="UTF-8"?>
+<!DOCTYPE Laptop [
+    <!ELEMENT Laptop (nombre, procesador, ram, almacenamiento)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT procesador (#PCDATA)>
+    <!ELEMENT ram (#PCDATA)>
+    <!ELEMENT almacenamiento (#PCDATA)>
+]>
+<Laptop>
+    <nombre>Lenovo Legion 5</nombre>
+    <procesador>AMD Ryzen 7 5800H</procesador>
+    <ram>16GB DDR4</ram>
+    <almacenamiento>512GB SSD</almacenamiento>
+</Laptop>
