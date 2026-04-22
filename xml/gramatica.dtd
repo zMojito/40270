@@ -1,5 +1,5 @@
-<?xml version=1.0 encoding="UTF-8"?>
-<!ElEMENT Laptop (nombre, procesador, ram, almacenamiento)>
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Laptop (nombre, procesador, ram, almacenamiento)>
 <!ELEMENT nombre (#PCDATA)>
 <!ELEMENT procesador (#PCDATA)>
 <!ELEMENT ram (#PCDATA)>
