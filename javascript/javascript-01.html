@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>titulo</h1>
+    <p id="p1" style = "color : aqua"></p>
+    <input type="text" id="input1">
+    <button id="button1">evento</button>
+    <button id="button2">color</button>
+    <button id="botonFondo">fondo</button>
+
+
+
+    <script>
+        let parrafo = document.getElementById("p1")
+        let entrada = document.getElementById("input1")
+        let boton =document.getElementById("button1")
+        let botonColor = document.getElementById("button2")
+        let botonFondo = document.getElementById("botonFondo")
+        //Control de eventos mediante una llamada de callback
+        boton.addEventListener("click", escribe)
+
+        function escribe(){
+            parrafo.innerText = entrada.value
+        }
+
+        //invocacion con funcion anonima
+        botonColor.addEventListener("click", function(){
+            parrafo.style.color = entrada.value
+        })
+
+        //funcion anonima flecja
+        const x1 = function () { console.log("solo!")}
+        const y1 = function (a,b) { return a*b}
+        const x2 = () => console.log("solo2!")
+        const y2 = (a,b) => a*b
+
+        botonFondo.addEventListener("click", () => parrafo.style.backgroundColor = "blue")
+    </script>
+    </body>
+</html>
