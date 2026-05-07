@@ -26,7 +26,13 @@ for (const key in operadores) {
         if (boton.innerText == "Ce")
             boton.addEventListener("click", borrar)
         if (boton.innerText == "+")
-            boton.addEventListener("click", sumar)
+            boton.addEventListener("click", obtener_parametro)
+        if (boton.innerText == "-")
+            boton.addEventListener("click", obtener_parametro)
+        if (boton.innerText == "*")
+            boton.addEventListener("click", obtener_parametro)
+        if (boton.innerText == "/")
+            boton.addEventListener("click", obtener_parametro)
         if (boton.innerText == "=")
             boton.addEventListener("click", igual)
         boton.addEventListener("click", pintar2)
@@ -41,17 +47,27 @@ function borrar() {
     resultado.value = ""
 }
 
-function sumar(e) {
+function obtener_parametro(e) {
     prm = resultado.value
     operacion = e.target.innerText
     resultado.value = ""
     e.target.style.backgroundColor = "red"
 }
 
+
 function igual() {
     let prm2 = resultado.value
     if (operacion == "+") {
         resultado.value = parseInt(prm) + parseInt(prm2)
+    }
+    if (operacion == "-") {
+        resultado.value = parseInt(prm) - parseInt(prm2)
+    }
+    if (operacion == "*") {
+        resultado.value = parseInt(prm) * parseInt(prm2)
+    }
+    if (operacion == "/") {
+        resultado.value = parseInt(prm) / parseInt(prm2)
     }
 
 }
