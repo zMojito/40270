@@ -16,6 +16,12 @@ for (const key in operadores){
             element.addEventListener("click", limpiar);
         if (element.id === "bSuma")
             element.addEventListener("click", sumar);
+        if (element.id === "bResta")
+            element.addEventListener("click", restar);
+        if (element.id === "bMultiplicacion")
+            element.addEventListener("click", multiplicar);
+        if (element.id === "bDivision")
+            element.addEventListener("click", dividir);
         if (element.id === "bIgual")
             element.addEventListener("click", igual);
         element.addEventListener("click", pinta2);
@@ -40,13 +46,47 @@ function sumar(e){
 
 }
 
+function restar(e){
+    prm = resultado.value;
+    operacion = e.target.innerText;
+    resultado.value = "";
+    e.target.style.backgroundColor = "red";
+}
+
+function multiplicar(e){
+    prm = resultado.value;
+    operacion = e.target.innerText;
+    resultado.value = "";
+    e.target.style.backgroundColor = "red";
+}
+
+function dividir(e){
+    prm = resultado.value;
+    operacion = e.target.innerText;
+    resultado.value = "";
+    e.target.style.backgroundColor = "red";
+}
+
 function igual(){
     let prm2 = resultado.value;
+    let botones = {
+        "+": "bSuma",
+        "-": "bResta",
+        "*": "bMultiplicacion",
+        "/": "bDivision"
+    };
+    
     if (operacion === "+") {
         resultado.value = parseInt(prm) + parseInt(prm2);
-        document.getElementById("bSuma").style.backgroundColor = "bisque";
-        
+    } else if (operacion === "-") {
+        resultado.value = parseInt(prm) - parseInt(prm2);
+    } else if (operacion === "*") {
+        resultado.value = parseInt(prm) * parseInt(prm2);
+    } else if (operacion === "/") {
+        resultado.value = parseInt(prm) / parseInt(prm2);
     }
+    
+    document.getElementById(botones[operacion]).style.backgroundColor = "bisque";
 }
 
 function limpiar(e){
